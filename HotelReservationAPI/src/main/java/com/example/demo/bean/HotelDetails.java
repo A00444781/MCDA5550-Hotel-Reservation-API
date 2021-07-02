@@ -31,6 +31,7 @@ public class HotelDetails {
 		this.availability = availability;
 		this.hotel_name = hotel_name;
 	}
+	
 	public int getId() {
 		return id;
 	}

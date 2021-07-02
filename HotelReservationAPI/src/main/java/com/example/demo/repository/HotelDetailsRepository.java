@@ -10,7 +10,7 @@ import com.example.demo.bean.HotelDetails;
 
 
 public interface HotelDetailsRepository extends CrudRepository<HotelDetails, Integer>{
-	@Query(value ="select * from hotel_table", nativeQuery = true)
+	@Query(value ="select * from hotel_details", nativeQuery = true)
 	List<HotelDetails> findAllHotel();
 
 }

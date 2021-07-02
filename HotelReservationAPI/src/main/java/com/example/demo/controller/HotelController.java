@@ -21,5 +21,10 @@ public class HotelController {
 		 List<HotelDetails> hotelEntity = hotelRepository.findAllHotel();
 		 return hotelEntity;
 	 }
+	 
+	 @RequestMapping("/test")
+	 public String hello() {
+		 return "hello";
+	 }
 
 }

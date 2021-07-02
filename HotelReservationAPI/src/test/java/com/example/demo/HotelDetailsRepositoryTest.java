@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
@@ -38,6 +40,16 @@ public class HotelDetailsRepositoryTest {
 		entityManager.persist(h3);
 		
 		
+	}
+	
+	@Test
+	public void HotelList() {
+		List<HotelDetails> hdl = repo.findAllHotel();
+		String name = "";
+		for(int i =0; i< hdl.size();i++) {
+			name = name + hdl.get(i).getHotel_name();
+		}
+		System.out.print(name);
 	}
 
 }
