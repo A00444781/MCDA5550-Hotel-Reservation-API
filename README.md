@@ -15,7 +15,7 @@ Response parameters:
 
 Request url: http://Hotelreservationapi-env.eba-jifxmizk.ca-central-1.elasticbeanstalk.com/reservation
 
-Request body: JSON
+Request body example: JSON
 ```
 { "hotel_name": "The Grand Hotel",
 
