@@ -13,21 +13,28 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="HotelGuests")
 public class Guest {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int guest_id;
 	
-	@Column(name = "guest_name",length = 25, nullable = false)
+	@Column(name = "guest_name",length = 45, nullable = false)
 	private String guest_name;
 	
-	@Column(name = "gender",length = 25, nullable = false)
+	@Column(name = "gender", nullable = false)
 	private Gender gender;
 	
-	@ManyToMany(mappedBy = "HotelGuests", fetch = FetchType.LAZY)
-	private Set<ReservationDetails> students = new HashSet<>();
+	
+	public Guest() {
+		
+	}
+	
+	public Guest(String guest_name, Gender gender) {
+		super();
+		this.guest_name = guest_name;
+		this.gender = gender;
+	}
 	
 	public String getGuest_Name() {
 		return guest_name;

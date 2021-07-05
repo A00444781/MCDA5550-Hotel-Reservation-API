@@ -17,35 +17,43 @@ import javax.persistence.Table;
 import javax.persistence.JoinColumn;
 
 @Entity
-@Table(name="HotelReservation")
 public class ReservationDetails {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int confirmation_id;
 	
-	@Column(name = "hotel_name",length = 25, nullable = false)
+	@Column(name = "hotel_name",length = 45, nullable = false)
 	private String hotel_name;
 	
-	@Column(name = "checkin",length = 25, nullable = false)
+	@Column(name = "checkin",length = 45, nullable = false)
 	private String checkin;
 	
-	@Column(name = "checkout",length = 25, nullable = false)
+	@Column(name = "checkout",length = 45, nullable = false)
 	private String checkout;
 	
 	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
-	@JoinTable(name = "HotelReservation_HotelGuests",
+	@JoinTable(
     joinColumns = {
-            @JoinColumn(name = "confirmation_id", referencedColumnName = "guest_id",
+            @JoinColumn(name = "confirmation_id", referencedColumnName = "confirmation_id",
                     nullable = false, updatable = false)},
     inverseJoinColumns = {
-            @JoinColumn(name = "guest_id", referencedColumnName = "confirmation_id",
+            @JoinColumn(name = "guest_id", referencedColumnName = "guest_id",
                     nullable = false, updatable = false)})
-	private Set<Guest> courses = new HashSet<>();
+	
+	private List<Guest> guests_list;
 	
 	
-	//private List<Guest> guest_list;
-	
+	public List<Guest> getGuests_list() {
+		return guests_list;
+	}
+
+
+	public void setGuests_list(List<Guest> guests_list) {
+		this.guests_list = guests_list;
+	}
+
+
 	public String getHotel_name() {
 		return hotel_name;
 	}
@@ -64,17 +72,27 @@ public class ReservationDetails {
 	public void setCheckout(String checkout) {
 		this.checkout = checkout;
 	}
-	public List<Guest> getGuest_list() {
-		return guest_list;
-	}
-	public void setGuest_list(List<Guest> guest_list) {
-		this.guest_list = guest_list;
-	}
 	public int getConfirmation_id() {
 		return confirmation_id;
 	}
 	public void setConfirmation_id(int confirmation_id) {
 		this.confirmation_id = confirmation_id;
+	}
+	
+	public void addGuest(Guest guest) {
+		this.guests_list.add(guest);
+	}
+	
+	public ReservationDetails() {
+		
+	}
+	
+	
+	public ReservationDetails(String hotel_name, String checkin, String checkout) {
+		super();
+		this.hotel_name = hotel_name;
+		this.checkin = checkin;
+		this.checkout = checkout;
 	}
 
 }

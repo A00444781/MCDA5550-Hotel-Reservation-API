@@ -8,6 +8,6 @@ import com.hotel.bean.ReservationDetails;
 
 public interface HotelReservationRepository extends CrudRepository<ReservationDetails, Integer>{
 
-	@Query(value ="select * from hotel_reservation", nativeQuery =true)
-	List<ReservationDetails> findAllHotel();
+	//@Query(value ="select * from hotel_reservation", nativeQuery =true)
+	//List<ReservationDetails> findAllHotel();
 }
