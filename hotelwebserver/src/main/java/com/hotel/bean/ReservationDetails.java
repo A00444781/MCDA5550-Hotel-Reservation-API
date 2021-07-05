@@ -1,7 +1,5 @@
 package com.hotel.bean;
-
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -13,7 +11,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.Table;
 import javax.persistence.JoinColumn;
 
 @Entity
@@ -41,19 +38,25 @@ public class ReservationDetails {
             @JoinColumn(name = "guest_id", referencedColumnName = "guest_id",
                     nullable = false, updatable = false)})
 	
-	private List<Guest> guests_list;
+	private Set<Guest> guests_list = new HashSet<>();
+	//private Set<Guest> guests_list;
+	
+
+//	public Set<Guest> getGuests_list() {
+//		return guests_list;
+//	}
+//	
+//	public void setGuests_list(Set<Guest> guests_list) {
+//		this.guests_list = guests_list;
+//	}
 	
 	
-	public List<Guest> getGuests_list() {
+	public Set<Guest> getGuests_list() {
 		return guests_list;
 	}
-
-
-	public void setGuests_list(List<Guest> guests_list) {
+	public void setGuests_list(Set<Guest> guests_list) {
 		this.guests_list = guests_list;
 	}
-
-
 	public String getHotel_name() {
 		return hotel_name;
 	}

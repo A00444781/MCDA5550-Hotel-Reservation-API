@@ -31,16 +31,16 @@ public class ReservationRepositoryTest {
 	 
 	 @Test 
 	 public void createOneNewGuest() {
-		 Guest guest1 = new Guest("Johnny",Gender.MALE);
+		 Guest guest1 = new Guest("JJ",Gender.MALE);
 		 
 		 entityManager.persist(guest1);
 	 }
 	 
 	 @Test
 	 public void createOneReservationWithOneGuest() {
-		 Guest guest2 = new Guest("Janet",Gender.FEMALE);
+		 Guest guest2 = new Guest("Evan",Gender.FEMALE);
 		 
-		 ReservationDetails reserv1 = new ReservationDetails("Season Inn","20210708","20211111");
+		 ReservationDetails reserv1 = new ReservationDetails("Comfot Inn","20210708","20211111");
 		 reserv1.addGuest(guest2);
 		 
 		 Repo.save(reserv1);

@@ -1,16 +1,10 @@
 package com.hotel.bean;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
 
 @Entity
 public class Guest {
@@ -19,10 +13,10 @@ public class Guest {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int guest_id;
 	
-	@Column(name = "guest_name",length = 45, nullable = false)
+	@Column(name = "guest_name",length = 45)
 	private String guest_name;
 	
-	@Column(name = "gender", nullable = false)
+	@Column(name = "gender")
 	private Gender gender;
 	
 	

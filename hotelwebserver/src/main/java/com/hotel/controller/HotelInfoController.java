@@ -24,7 +24,11 @@ import com.hotel.repository.HotelReservationRepository;
 public class HotelInfoController {
 	@Autowired
 	private HotelInfoRepository hotelRepo;
+	
+	@Autowired
 	private GuestRepository guestRepo;
+	
+	@Autowired
 	private HotelReservationRepository hotelReservationRepo;
 	
 	@RequestMapping("/hotelList")
@@ -38,24 +42,27 @@ public class HotelInfoController {
 	public int reserveHotel(@RequestBody ReservationDetails reservationDetails) {
 		
 		ReservationDetails reservationDetails1 = new ReservationDetails(reservationDetails.getHotel_name(), reservationDetails.getCheckin(), reservationDetails.getCheckout());
-		List<Guest> guestList=reservationDetails.getGuests_list();
+		Set<Guest> guestList=reservationDetails.getGuests_list();
 		
-//		for(Guest guest:guestList) {
-//			String guest_name = guest.getGuest_Name();
-//			Gender gender = guest.getGender();
-//			Guest guest1 = new Guest(guest_name,gender);
-//			guestRepo.save(guest1);
-//			
-//			reservationDetails1.addGuest(guest1);
-//		}
-//		hotelReservationRepo.save(reservationDetails1);
-		
-		for(int i = 0; i < guestList.size(); i++) {
-			Guest guest = new Guest(guestList.get(i).getGuest_Name(), guestList.get(i).getGender());
-			reservationDetails1.addGuest(guest);
-			guestRepo.save(guest);
+		for(Guest guest:guestList) {
+			String guest_name = guest.getGuest_Name();
+			Gender gender = guest.getGender();
+			
+			Guest guest1 = new Guest(guest_name,gender);
+			guestRepo.save(guest1);
+			
+			reservationDetails1.addGuest(guest1);
 		}
 		hotelReservationRepo.save(reservationDetails1);
+		
+//		for(int i = 0; i < guestList.size(); i++) {
+//			Guest guest = new Guest(guestList.get(i).getGuest_Name(), guestList.get(i).getGender());
+//			guestRepo.save(guest);
+//			
+//			reservationDetails1.addGuest(guest);
+//			//guestRepo.save(guest);
+//		}
+//		hotelReservationRepo.save(reservationDetails1);
 		
 		return reservationDetails1.getConfirmation_id();
 	}
