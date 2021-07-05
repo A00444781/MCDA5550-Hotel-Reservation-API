@@ -1,5 +1,5 @@
-## This is an API designing assignment for hotel reservation in MCDA5550
-1. Request method: GET
+## API designing assignment for hotel reservation in MCDA5550
+1. Request method: **GET**
 
 Request url: http://Hotelreservationapi-env.eba-jifxmizk.ca-central-1.elasticbeanstalk.com/hotelist
 
@@ -11,7 +11,7 @@ Response parameters:
 |price|int|price per night|
 |availability|boolean|true or false|
 
-2. Request method: POST
+2. Request method: **POST**
 
 Request url: http://Hotelreservationapi-env.eba-jifxmizk.ca-central-1.elasticbeanstalk.com/reservation
 
@@ -51,4 +51,4 @@ Response parameter:
 |------|------|------|
 |Confirmation_number|int|a unique number of reservation|
 
-3. Database is mysql hosted on dbcourse.cs.smu.ca, username: u43
+3. Database is mysql hosted on dbcourse.cs.smu.ca, username: u43, schema name: u43
