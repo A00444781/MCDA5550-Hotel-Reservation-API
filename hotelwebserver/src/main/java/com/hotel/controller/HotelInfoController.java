@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -54,15 +53,6 @@ public class HotelInfoController {
 			reservationDetails1.addGuest(guest1);
 		}
 		hotelReservationRepo.save(reservationDetails1);
-		
-//		for(int i = 0; i < guestList.size(); i++) {
-//			Guest guest = new Guest(guestList.get(i).getGuest_Name(), guestList.get(i).getGender());
-//			guestRepo.save(guest);
-//			
-//			reservationDetails1.addGuest(guest);
-//			//guestRepo.save(guest);
-//		}
-//		hotelReservationRepo.save(reservationDetails1);
 		
 		return reservationDetails1.getConfirmation_id();
 	}

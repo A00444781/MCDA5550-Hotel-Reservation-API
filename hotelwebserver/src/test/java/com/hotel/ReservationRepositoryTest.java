@@ -45,7 +45,6 @@ public class ReservationRepositoryTest {
 		 
 		 Repo.save(reserv1);
 		 
-		 //reserv1.getConfirmation_id();
 	 }
 
 

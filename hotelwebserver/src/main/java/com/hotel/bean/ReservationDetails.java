@@ -39,16 +39,6 @@ public class ReservationDetails {
                     nullable = false, updatable = false)})
 	
 	private Set<Guest> guests_list = new HashSet<>();
-	//private Set<Guest> guests_list;
-	
-
-//	public Set<Guest> getGuests_list() {
-//		return guests_list;
-//	}
-//	
-//	public void setGuests_list(Set<Guest> guests_list) {
-//		this.guests_list = guests_list;
-//	}
 	
 	
 	public Set<Guest> getGuests_list() {
