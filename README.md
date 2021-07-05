@@ -1,5 +1,5 @@
 ## This is an API designing assignment for hotel reservation in MCDA5550
-1. 
+1. API 1
 Request method: GET
 Request url: http://Hotelreservationapi-env.eba-jifxmizk.ca-central-1.elasticbeanstalk.com/hotelist
 
@@ -11,10 +11,11 @@ Response parameters:
 |price|int|price per night|
 |availability|boolean|true or false|
 
-2.
+2. API 2
 Request method: POST
 Request url: http://Hotelreservationapi-env.eba-jifxmizk.ca-central-1.elasticbeanstalk.com/reservation
 Request body: JSON
+```
 { "hotel_name": "The Halifax Hotel",
 
    "checkin": "20210703",
@@ -32,6 +33,7 @@ Request body: JSON
 		}
 	]
 }
+```
 
 Request parameters:
 |Key|Type|Describe|
