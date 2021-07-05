@@ -5,7 +5,7 @@ Request method: GET
 Request url: http://Hotelreservationapi-env.eba-jifxmizk.ca-central-1.elasticbeanstalk.com/hotelist
 
 Response parameters:
-|Key|Type|Describe|
+|Key|Type|Description|
 |------|------|------|
 |id|int|a unique number of hotel|
 |hotel_name|String|name of hotel|
@@ -39,7 +39,7 @@ Request body: JSON
 ```
 
 Request parameters:
-|Key|Type|Describe|
+|Key|Type|Description|
 |------|------|------|
 |hotel_name|String|It's the unique number for hotel|
 |checkin|String|checkin time, not null|
