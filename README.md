@@ -1,7 +1,7 @@
 ## API designing assignment for hotel reservation in MCDA5550
 1. Request method: **GET**
 
-Request url: http://Hotelreservationapi-env.eba-jifxmizk.ca-central-1.elasticbeanstalk.com/hotelist
+Request url: https://hotelreservationapi.azurewebsites.net/hotelList
 
 Response parameters:
 |Key|Type|Description|
@@ -13,7 +13,7 @@ Response parameters:
 
 2. Request method: **POST**
 
-Request url: http://Hotelreservationapi-env.eba-jifxmizk.ca-central-1.elasticbeanstalk.com/reservation
+Request url: https://hotelreservationapi.azurewebsites.net/reservation
 
 Request body example: JSON
 ```
