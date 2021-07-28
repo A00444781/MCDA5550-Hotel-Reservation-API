@@ -1,6 +1,6 @@
-## API designing assignment for hotel reservation in MCDA5550
+# API designing assignment for hotel reservation in MCDA5550
 
-# Please try at least 3 times if timeout error appears.
+## Please try at least 3 times if timeout error appears.
 
 1. Request method: **GET**
 
